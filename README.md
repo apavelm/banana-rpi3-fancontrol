@@ -17,7 +17,7 @@ and then
 - `/etc/init.d/fancontrol start`
 
 ### (**Optional**) Statistics and charts if you need them in your LUCI
-- `opkg install socat collectd collectd-mod- collectd-mod-sensors luci-app-statistics`
+- `opkg install collectd collectd-mod-exec collectd-mod-sensors luci-app-statistics`
 - copy `fan_metrics.sh` in `/usr/bin/`
 - `chmod +x /usr/bin/fan_metrics.sh`
 - modify `/usr/share/collectd/types.db`. Add lines to the end of file
