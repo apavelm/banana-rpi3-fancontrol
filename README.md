@@ -6,7 +6,7 @@ This OpenWRT script fixes well-known overheating issue due to incorrect fan cont
 - copy `fancontrol` into `/etc/init.d/`
 - copy `fancontrol_daemon.sh` in `/usr/bin/`
 
-do not forget to makethem executible
+do not forget to make them executible
 - `chmod +x /etc/init.d/fancontrol`
 - `chmod +x /usr/bin/fancontrol_daemon.sh`
 
