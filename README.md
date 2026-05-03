@@ -11,9 +11,9 @@ do not forget to make them executible
 - `chmod +x /usr/bin/fancontrol_daemon.sh`
 
 setup service
-- `/etc/init.d/fancontol enable`
+- `/etc/init.d/fancontrol enable`
 and then
-- `/etc/init.d/fancontol start`
+- `/etc/init.d/fancontrol start`
 
 # Description
 *Everything described below could be modified in shell-script `fancontrol_daemon.sh`*
