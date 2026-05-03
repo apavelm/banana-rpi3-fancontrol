@@ -17,6 +17,10 @@ and then
 - `/etc/init.d/fancontrol start`
 
 ### (**Optional**) Statistics and charts if you need them in your LUCI
+
+<img width="968" height="535" alt="image" src="https://github.com/user-attachments/assets/d68cd696-6802-4336-bcf0-7e721c3c69d8" />
+
+
 - `opkg install collectd collectd-mod-exec collectd-mod-sensors luci-app-statistics`
 - copy `fan_metrics.sh` in `/usr/bin/`
 - `chmod +x /usr/bin/fan_metrics.sh`
