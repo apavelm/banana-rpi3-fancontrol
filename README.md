@@ -16,16 +16,26 @@ setup service
 and then
 - `/etc/init.d/fancontrol start`
 
-### **Optionally** Statistics and charts
-- `opkg install collectd collectd-mod-exec collectd-mod-sensors luci-app-statistics`
+### (**Optional**) Statistics and charts if you need them in your LUCI
+- `opkg install socat collectd collectd-mod- collectd-mod-sensors luci-app-statistics`
 - copy `fan_metrics.sh` in `/usr/bin/`
 - `chmod +x /usr/bin/fan_metrics.sh`
 - modify `/usr/share/collectd/types.db`. Add lines to the end of file
 ```
 # Fancontrol
-fancombo  pwm:GAUGE:0:255, temp:GAUGE:0:120
+fanpwm   value:GAUGE:0:255
+fantemp  value:GAUGE:0:120
 ```
+- create a new service by copying `fanmetrics` into `/etc/init.d/`
+- `chmod +x /etc/init.d/fanmetrics`
+setup service
+- `/etc/init.d/fanmetrics enable`
+and then
+- `/etc/init.d/fanmetrics start`
+- enable **Exec** plugin in luci-app-statistics, Statistics -> Setup -> General -> Exec (Configure) with script `/usr/bin/fan_metrics.sh` `nobody:nogroup`
 - restart service `/etc/init.d/collectd restart`
+- copy `fan.js` into `/www/luci-static/resources/statistics/rrdtool/definitions/`
+- reboot
 
 ## Description
 *Everything described below could be modified in shell-script `fancontrol_daemon.sh`*
