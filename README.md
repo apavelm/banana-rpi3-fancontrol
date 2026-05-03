@@ -23,6 +23,6 @@ Use `logread -e fancontrol` to check logs
 # Important notes
 Fan controlled via sending an 8bit integer value to `/sys/devices/platform/pwm-fan/hwmon/hwmon1/pwm1`
 For some reason it works this way:
-255 - means FAN if OFF, actually it still not working until 90
-40-60 - avarage speed
-0 - FAN is ON MAXIMUM SPEED.
+- 255 - means FAN if OFF (actually it still not working until 90)
+- 40-60 - avarage speed
+- 0 - FAN is ON MAXIMUM SPEED.
