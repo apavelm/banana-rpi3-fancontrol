@@ -1,7 +1,8 @@
 # Fan controlling daemon (service) for Banana Pi R3 (OpenWRT)
 This OpenWRT script fixes well-known overheating issue due to incorrect fan controlling.
+Optionally it could be used for `luci-app-statistics`
 
-# Installation
+## Installation
 
 - copy `fancontrol` into `/etc/init.d/`
 - copy `fancontrol_daemon.sh` in `/usr/bin/`
@@ -15,7 +16,18 @@ setup service
 and then
 - `/etc/init.d/fancontrol start`
 
-# Description
+### **Optionally** Statistics and charts
+- `opkg install collectd collectd-mod-exec collectd-mod-sensors luci-app-statistics`
+- copy `fan_metrics.sh` in `/usr/bin/`
+- `chmod +x /usr/bin/fan_metrics.sh`
+- modify `/usr/share/collectd/types.db`. Add lines to the end of file
+```
+# Fancontrol
+fancombo  pwm:GAUGE:0:255, temp:GAUGE:0:120
+```
+- restart service `/etc/init.d/collectd restart`
+
+## Description
 *Everything described below could be modified in shell-script `fancontrol_daemon.sh`*
 
 This daemon:
@@ -24,10 +36,10 @@ This daemon:
 - Has 5 temperature points (to control fan speed by effective temperature value)
 - Has NIGHT MODE. My fan is quite noisy, so I make it more silent. during night time (21.00 to 08.00) it uses "night points" instead
 
-# Logs
+## Logs
 Use `logread -e fancontrol` to check logs
 
-# Important notes
+## Important notes
 Fan controlled via sending an 8bit integer value to `/sys/devices/platform/pwm-fan/hwmon/hwmon1/pwm1`
 For some reason it works this way:
 - 255 - means FAN if OFF (actually it still not working until 90)
