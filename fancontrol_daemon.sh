@@ -10,7 +10,7 @@ PWM_FILE="/sys/devices/platform/pwm-fan/hwmon/hwmon1/pwm1"
 CPU_TEMP_FILE="/sys/class/thermal/thermal_zone0/temp"
 SENSOR1="/sys/class/hwmon/hwmon2/temp1_input"
 SENSOR2="/sys/class/hwmon/hwmon3/temp1_input"
-LOG_FILE="/var/tmp/fancontrol.tmp"
+LOG_FILE="/var/run/fancontrol_pwm"
 PID_FILE="/var/run/fancontrol.pid"
 
 # points
