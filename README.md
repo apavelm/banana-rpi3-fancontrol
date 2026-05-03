@@ -46,6 +46,8 @@ and then
 
 This daemon:
 - Considers CPU thermal sensor and 2 Wireless sensors, and takes into consideration MAX(cpu_temp, AVG(wireless1_temp, wireless2_temp)) as EFFECTIVE temperature
+<img width="985" height="744" alt="image" src="https://github.com/user-attachments/assets/16d5d7fc-9930-4295-8427-0e11110eee1a" />
+ 
 - Uses hysteresis (2 degrees)
 - Has 5 temperature points (to control fan speed by effective temperature value)
 - Has NIGHT MODE. My fan is quite noisy, so I make it more silent. during night time (21.00 to 08.00) it uses "night points" instead
