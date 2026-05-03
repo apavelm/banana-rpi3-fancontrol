@@ -5,6 +5,11 @@ Optionally it could be used for `luci-app-statistics`
 Please note, my board version and FAN is like on the image below, this code works well on 24.10 OpenWRT version
 <img width="625" height="579" alt="image" src="https://github.com/user-attachments/assets/55cbe1ed-1d33-438a-8ebd-f7f4c68aca35" />
 
+## Supported features
+- 5 points of temperature for smooth controlling
+- "night" mode to reduce noise during night time
+- hysteresis for smooth controlling
+- optional statistics to review the history
 
 ## Installation
 
