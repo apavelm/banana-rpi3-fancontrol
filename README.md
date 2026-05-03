@@ -51,7 +51,7 @@ This daemon:
 - Has NIGHT MODE. My fan is quite noisy, so I make it more silent. during night time (21.00 to 08.00) it uses "night points" instead
 
 ## Logs
-Use `logread -e fancontrol` to check logs
+Use `logread -e fan` to check logs
 
 ## Important notes
 Fan controlled via sending an 8bit integer value to `/sys/devices/platform/pwm-fan/hwmon/hwmon1/pwm1`
